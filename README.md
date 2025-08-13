@@ -34,6 +34,27 @@ pytest
 flake8 .
 ```
 
+## 🐳 Docker
+
+### Construir imagen Docker
+```bash
+docker build -t docker-learning:latest .
+```
+
+### Ejecutar con Docker
+```bash
+docker run --rm docker-learning:latest
+```
+
+### Usar Docker Compose
+```bash
+# Ejecutar la aplicación
+docker-compose up app
+
+# Modo desarrollo (con hot-reload)
+docker-compose --profile dev up dev
+```
+
 ## 🔄 Integración Continua
 
 El proyecto incluye un pipeline de CI/CD que se ejecuta automáticamente en GitHub Actions cuando:
@@ -60,11 +81,14 @@ docker_1/
 │   ├── __init__.py
 │   └── test_docker.py      # Tests del proyecto
 ├── docker.py               # Aplicación principal
+├── Dockerfile              # Configuración Docker
+├── docker-compose.yml      # Orquestación Docker
+├── .dockerignore           # Archivos ignorados por Docker
 ├── requirements.txt        # Dependencias
-├── pytest.ini            # Configuración de pytest
-├── .gitignore             # Archivos a ignorar
-├── .env.example           # Plantilla de variables
-└── README.md              # Este archivo
+├── pytest.ini             # Configuración de pytest
+├── .gitignore              # Archivos a ignorar
+├── .env.example            # Plantilla de variables
+└── README.md               # Este archivo
 ```
 
 ## 🔒 Seguridad

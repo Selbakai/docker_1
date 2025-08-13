@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    image: docker-learning:latest
+    container_name: docker-learning-app
+    restart: unless-stopped
+    volumes:
+      - ./logs:/app/logs  # Para logs futuros si se necesitan
+    environment:
+      - PYTHONUNBUFFERED=1
+    # ports:
+    #   - "8000:8000"  # Descomentar si necesitas exponer puertos
+
+  # Servicio de desarrollo con volúmenes para hot-reload
+  dev:
+    build: .
+    image: docker-learning:latest
+    container_name: docker-learning-dev
+    volumes:
+      - .:/app  # Mount del código fuente para desarrollo
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python docker.py
+    profiles:
+      - dev
