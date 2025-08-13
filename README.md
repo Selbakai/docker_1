@@ -44,8 +44,8 @@ El proyecto incluye un pipeline de CI/CD que se ejecuta automáticamente en GitH
 ### El pipeline incluye:
 
 - ✅ **Tests**: Ejecuta todos los tests con pytest
-- 🔍 **Linting**: Verifica la calidad del código con flake8
-- 🐍 **Múltiples versiones**: Prueba en Python 3.8, 3.9, 3.10, 3.11
+- 🔍 **Linting**: Verifica la calidad del código con flake8 (después de tests)
+- 🐍 **Múltiples versiones**: Prueba en Python 3.9, 3.10, 3.11, 3.12
 - 🐳 **Docker**: Intenta construir imagen Docker (si existe Dockerfile)
 - 📊 **Cobertura**: Genera reportes de cobertura de código
 
